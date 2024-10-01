@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   get: ^4.6.6
   flutter_login: ^5.0.0
-  image_picker: ^1.1.2
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +62,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/Sign.png
+    - assets/Menu_Latihan.png
+    - assets/profil.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
