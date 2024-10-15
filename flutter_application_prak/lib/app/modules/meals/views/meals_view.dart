@@ -37,21 +37,27 @@ class MealsView extends StatelessWidget {
           itemBuilder: (context, index) {
             final meal = mealsController.meals[index];
 
+            // Ensure there is at least one result
+            if (meal.result.isEmpty) {
+              return const Text('No results available.');
+            }
+
+            final firstMeal = meal.result[0];
+
             return Card(
               margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               child: ListTile(
-                title: Text(meal.result[0]
-                    .name), // Assuming meals have a list of results and using the first one
+                title: Text(firstMeal.name),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Calories: ${meal.result[0].calories} kcal'),
-                    Text('Carbohydrates: ${meal.result[0].carbohidrates} g'),
-                    Text('Proteins: ${meal.result[0].proteins} g'),
-                    Text('Fat: ${meal.result[0].fat} g'),
-                    Text('Fibres: ${meal.result[0].fibres} g'),
-                    Text('Salt: ${meal.result[0].salt} g'),
-                    Text('Sugar: ${meal.result[0].sugar} g'),
+                    Text('Calories: ${firstMeal.calories} kcal'),
+                    Text('Carbohydrates: ${firstMeal.carbohidrates} g'),
+                    Text('Proteins: ${firstMeal.proteins} g'),
+                    Text('Fat: ${firstMeal.fat} g'),
+                    Text('Fibres: ${firstMeal.fibres} g'),
+                    Text('Salt: ${firstMeal.salt} g'),
+                    Text('Sugar: ${firstMeal.sugar} g'),
                   ],
                 ),
               ),
